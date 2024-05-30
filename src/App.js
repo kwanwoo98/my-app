@@ -1,9 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Info from './chapter07/Info';
 
 function App() {
+  const [visible, setVisible] = useState(false);
   return (
     <div className="App">
+      <div>
+        <button onClick={()=>setVisible(!visible)}>
+          {visible ? "숨김" : "보임"}
+        </button>
+        <hr/>
+        {visible && <info/>}
+      </div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
